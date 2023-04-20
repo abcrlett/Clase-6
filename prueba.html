@@ -1,0 +1,14 @@
+<html>
+    <body></body>
+    <script>
+        async function tofu() {
+            const consulta = await fetch("https://raw.githubusercontent.com/abcrlett/Clase-6/main/data.json");
+            const data = await consulta.json();
+            console.log(data);
+            data.forEach((x)=>{
+                document.querySelector("body").innerHTML += '<p>' + x.title + '</p>';
+            });
+        }
+        tofu().catch((error) => console.error(error));
+    </script>
+</html>
