@@ -216,10 +216,12 @@
                 var antes = '<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>';
                 var despues = '<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>';
                 var imagenes
-                data[nro].img.forEach((foto)=>{
-                    imagenes += '<div class="carousel-item active"><img class="w-100 my-3 rounded" src="' + foto + '"></div>';
+                data[nro].img.forEach((foto, index)=>{
+                    imagenes += '<div id="carrusel' + index + '"class="carousel-item"><img class="w-100 my-3 rounded" src="' + foto + '"></div>';
                 });
                 imagenes += "</div>";
+                document.getElementById("carrusel1").classList.add('active');
+                
                 dondemas.innerHTML = '<div class="row"><div class="col-sm-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto"><h1><button type="button" class="btn btn-sm btn-outline-secondary shadow-sm mb-2 me-3 fw-bold" onClick="window.location.reload()">&larr; VOLVER</button> ' + data[nro].title + '</h1>' + inicioCarrusel + imagenes + antes + despues + '</div>' + data[nro].text + '</div></div>';
                 document.querySelectorAll("a.nav-link")[0].classList.remove("active");
                 document.querySelectorAll("aside")[0].classList.add("d-none");
