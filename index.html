@@ -220,7 +220,7 @@
                     imagenes += '<div id="carrusel' + index + '"class="carousel-item"><img class="w-100 my-3 rounded" src="' + foto + '"></div>';
                 });
                 imagenes += "</div>";
-                document.getElementById("carrusel1").classList.add('active');
+                document.getElementById("carrusel0").classList.add('active');
                 
                 dondemas.innerHTML = '<div class="row"><div class="col-sm-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto"><h1><button type="button" class="btn btn-sm btn-outline-secondary shadow-sm mb-2 me-3 fw-bold" onClick="window.location.reload()">&larr; VOLVER</button> ' + data[nro].title + '</h1>' + inicioCarrusel + imagenes + antes + despues + '</div>' + data[nro].text + '</div></div>';
                 document.querySelectorAll("a.nav-link")[0].classList.remove("active");
